@@ -1,0 +1,24 @@
+{
+  "orders": [
+    {
+      "id": 40842,
+      "hotel_name": "Domino's Pizza",
+      "name": "Lovepreet",
+      "email": "leosaini5959@gmail.com",
+      "cost": 577,
+      "phone": "7357448832",
+      "address": "Jaipur, Rajasthan",
+      "menuItem": "1,2,3"
+    },
+    {
+      "id": 44741,
+      "hotel_name": "Empire Restaurant",
+      "name": "Aniket",
+      "email": "aniket@gmail.com",
+      "cost": 485,
+      "phone": "9856783443",
+      "address": "Jaipur, Rajasthan",
+      "menuItem": "21,22,23,20"
+    }
+  ]
+}
