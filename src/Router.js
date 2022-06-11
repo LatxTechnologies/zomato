@@ -7,6 +7,8 @@ import Listing from "./components/Listing/Listing";
 import RestDetail from "./components/Detail/restDetail";
 import PlaceOrder from "./components/bookings/placeOrder";
 import ViewOrder from "./components/bookings/viewOrder";
+import Register from "./components/Login/register";
+import Login from "./components/Login/login";
 
 function Routing()
 {
@@ -19,6 +21,8 @@ function Routing()
                 <Route exact path="/details" component={RestDetail} />
                 <Route exact path="/placeOrder/:restName" component={PlaceOrder} />
                 <Route exact path="/viewBooking" component={ViewOrder} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
                 <Footer />
             </div>
         </BrowserRouter>

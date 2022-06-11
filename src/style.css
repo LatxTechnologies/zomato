@@ -420,3 +420,17 @@ nav label i{
 {
     font-size: 20px;
 }
+.FilterTitle
+{
+    font-size: 20px;
+    font-weight: 600;
+}
+.Filters
+{
+    font-size: 18px;
+    padding:10px 20px;
+}
+.Filters label
+{
+    margin : 10px;
+}

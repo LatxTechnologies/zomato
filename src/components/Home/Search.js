@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 const lurl = "https://nav-intern-zomoto-api.herokuapp.com/location";
 const rurl = "https://nav-intern-zomoto-api.herokuapp.com/restro?state_id=";
+
 class Search extends Component{
     
     constructor(props)
@@ -40,13 +42,21 @@ class Search extends Component{
         if(data){
             return data.map((item)=>{
                 return (
-                    <option value={item.restaurant_name} key={item.restaurant_id} >{item.restaurant_name}</option>
+                    <option value={item.restaurant_id} key={item.restaurant_id} >{item.restaurant_name}</option>
                 )
             })
         }
           
     }
     
+    handleRest = (event) =>{
+        // when we check this console we not getting any props here because we access this property in Parents only not in child so to do this we need withRoute 
+        // console.log("Inside Search =>", this.props)
+        let restId = event.target.value;
+        console.log(restId)
+        this.props.history.push(`/details?restId=${restId}`)
+    }
+
     render(){
         console.log("Render", this.state.location);
         return(
@@ -59,13 +69,13 @@ class Search extends Component{
                         <option>Select City</option>
                         {this.renderCity(this.state.location)}
                     </select>
-                    <select id="options">
+                    <select id="options" onChange={this.handleRest}>
                         <option>Select Restro</option>
                         {this.renderRestro(this.state.restrodata)}
                     </select>
                     
                 </form>
-            </div>
+            </div> 
         </section>             
         )
     }
@@ -88,4 +98,4 @@ componentDidMount()
 
 
 
-export default Search;
+export default withRouter(Search);

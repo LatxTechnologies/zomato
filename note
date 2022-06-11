@@ -1,2 +1,28 @@
 npm install -g json-server
 json-server --watch order.json --port 6700
+
+lOGIN and Register API
+1. get all user
+   get >> https://nav-intern-zomoto-api.herokuapp.com/api/auth/users
+
+2. Register
+   post >> https://nav-intern-zomoto-api.herokuapp.com/api/auth/register
+    body => {
+            "name" : "Lovepreet",
+            "email" : "leosaini@gmail.com",
+            "password" : "leosaini@1",
+            "phone" : 7357448832,
+            "role" : 
+    }
+
+3. Login  
+    post >> https://nav-intern-zomoto-api.herokuapp.com/api/auth/login
+    body => {
+        "email" : "leosaini@gmail.com",
+        "password" : "leosaini@1"
+    }
+    "response" => {auth : true, token : "anytoken"}
+
+4. USer Info 
+    get => https://nav-intern-zomoto-api.herokuapp.com/api/auth/userinfo
+    header => ("x-access-token" : "token value from login") 
