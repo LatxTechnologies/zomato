@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../../Header";
 
 const url = "https://zomato-login-logout.herokuapp.com/api/auth/login";
 
@@ -29,13 +28,13 @@ class Login extends Component{
         })
         .then((res) => res.json())
         .then((data) => {
+            console.log("data =>", data)
             if(data.auth === false)
             {
                 this.setState({message : data.token})
                 this.props.history.push("/");
             }else{
-                sessionStorage.setItem("ltk" , data.token)
-                
+                sessionStorage.setItem("ltk" , data.token)            
             }
         })
     }
